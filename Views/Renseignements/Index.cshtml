@@ -1,0 +1,109 @@
+﻿@model IEnumerable<FicheConstat.Models.Renseignement>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Date)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroInventaire)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumeroSerie)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.NumTicket)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Intervenant)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Constat)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Priorite)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.IdUser)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Noms)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Materiel)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DescriptionProbleme)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DecisionRemarqueIT)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroInventaire)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumeroSerie)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.NumTicket)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Intervenant)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Constat)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Priorite)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.IdUser)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Noms)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Materiel)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DescriptionProbleme)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DecisionRemarqueIT)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.ID">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.ID">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.ID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
+</body>
+</html>
